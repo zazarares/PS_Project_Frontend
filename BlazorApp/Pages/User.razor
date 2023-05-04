@@ -1,0 +1,12 @@
+﻿@page "/user/{id}"
+@inject NavigationManager NavManager
+<h3>Donor</h3>
+<button class="non-resizableButton" @onclick="MakeAppointment">Make Appointment</button>
+@code {
+    [Parameter]
+    public string id { get; set; }
+    void MakeAppointment()
+    {
+        NavManager.NavigateTo($"/Appointment/{id}");
+    }
+}

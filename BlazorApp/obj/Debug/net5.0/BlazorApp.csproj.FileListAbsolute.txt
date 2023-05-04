@@ -1,0 +1,252 @@
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\appsettings.json
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\BlazorApp.StaticWebAssets.xml
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\BlazorApp.exe
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\BlazorApp.deps.json
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\BlazorApp.runtimeconfig.json
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\BlazorApp.runtimeconfig.dev.json
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\BlazorApp.dll
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\ref\BlazorApp.dll
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\BlazorApp.pdb
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\BlazorApp.Views.dll
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\BlazorApp.Views.pdb
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.csproj.AssemblyReference.cache
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.AssemblyInfoInputs.cache
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.AssemblyInfo.cs
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.csproj.CoreCompileInputs.cache
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.RazorComponent.input.cache
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\App.razor.g.cs
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\Pages\Counter.razor.g.cs
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\Pages\FetchData.razor.g.cs
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\Pages\Index.razor.g.cs
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\Shared\SurveyPrompt.razor.g.cs
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\_Imports.razor.g.cs
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\Shared\MainLayout.razor.g.cs
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\Shared\NavMenu.razor.g.cs
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.RazorComponent.output.cache
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\BlazorApp.dll
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.TagHelpers.input.cache
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.TagHelpers.output.cache
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.RazorCoreGenerate.cache
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\App.razor.g.cs
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Pages\Counter.razor.g.cs
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Pages\FetchData.razor.g.cs
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Pages\Index.razor.g.cs
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Shared\SurveyPrompt.razor.g.cs
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\_Imports.razor.g.cs
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Shared\MainLayout.razor.g.cs
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Shared\NavMenu.razor.g.cs
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Pages\Error.cshtml.g.cs
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Pages\_Host.cshtml.g.cs
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.RazorAssemblyInfo.cache
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.RazorAssemblyInfo.cs
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\staticwebassets\BlazorApp.StaticWebAssets.Manifest.cache
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\staticwebassets\BlazorApp.StaticWebAssets.xml
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\scopedcss\bundle\BlazorApp.styles.css
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\scopedcss\projectbundle\BlazorApp.bundle.scp.css
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.RazorTargetAssemblyInfo.cache
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.RazorTargetAssemblyInfo.cs
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.Views.pdb
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.dll
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\ref\BlazorApp.dll
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.pdb
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.genruntimeconfig.cache
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.csproj.CopyComplete
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\EntityFramework.SqlServer.dll
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\EntityFramework.dll
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\System.CodeDom.dll
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\System.Data.SqlClient.dll
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\runtimes\win-arm64\native\sni.dll
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\runtimes\win-x64\native\sni.dll
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\runtimes\win-x86\native\sni.dll
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\Pages\Component.razor.g.cs
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Pages\Component.razor.g.cs
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\Pages\Login-Page.razor.g.cs
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Pages\Login-Page.razor.g.cs
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\Pages\CreateAccount.razor.g.cs
+C:\Users\Hotupan Rares\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Pages\CreateAccount.razor.g.cs
+D:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\appsettings.Development.json
+D:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\appsettings.json
+D:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\BlazorApp.StaticWebAssets.xml
+D:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\BlazorApp.exe
+D:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\BlazorApp.deps.json
+D:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\BlazorApp.runtimeconfig.json
+D:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\BlazorApp.runtimeconfig.dev.json
+D:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\BlazorApp.dll
+D:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\ref\BlazorApp.dll
+D:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\BlazorApp.pdb
+D:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\BlazorApp.Views.dll
+D:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\BlazorApp.Views.pdb
+D:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\EntityFramework.SqlServer.dll
+D:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\EntityFramework.dll
+D:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\System.CodeDom.dll
+D:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
+D:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\System.Data.SqlClient.dll
+D:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
+D:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\runtimes\win-arm64\native\sni.dll
+D:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\runtimes\win-x64\native\sni.dll
+D:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\runtimes\win-x86\native\sni.dll
+D:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.csproj.AssemblyReference.cache
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.AssemblyInfoInputs.cache
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.AssemblyInfo.cs
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.csproj.CoreCompileInputs.cache
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.MvcApplicationPartsAssemblyInfo.cache
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.RazorComponent.input.cache
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\App.razor.g.cs
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\Pages\Component.razor.g.cs
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\Pages\Counter.razor.g.cs
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\Pages\CreateAccount.razor.g.cs
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\Pages\FetchData.razor.g.cs
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\Pages\Index.razor.g.cs
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\Pages\Login-Page.razor.g.cs
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\Shared\SurveyPrompt.razor.g.cs
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\_Imports.razor.g.cs
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\Shared\MainLayout.razor.g.cs
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\Shared\NavMenu.razor.g.cs
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.RazorComponent.output.cache
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\BlazorApp.dll
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.TagHelpers.input.cache
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.TagHelpers.output.cache
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.RazorCoreGenerate.cache
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\App.razor.g.cs
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Pages\Component.razor.g.cs
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Pages\Counter.razor.g.cs
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Pages\CreateAccount.razor.g.cs
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Pages\FetchData.razor.g.cs
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Pages\Index.razor.g.cs
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Pages\Login-Page.razor.g.cs
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Shared\SurveyPrompt.razor.g.cs
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\_Imports.razor.g.cs
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Shared\MainLayout.razor.g.cs
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Shared\NavMenu.razor.g.cs
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Pages\Error.cshtml.g.cs
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Pages\_Host.cshtml.g.cs
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.RazorAssemblyInfo.cache
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.RazorAssemblyInfo.cs
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\staticwebassets\BlazorApp.StaticWebAssets.Manifest.cache
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\staticwebassets\BlazorApp.StaticWebAssets.xml
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\scopedcss\bundle\BlazorApp.styles.css
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\scopedcss\projectbundle\BlazorApp.bundle.scp.css
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.RazorTargetAssemblyInfo.cache
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.RazorTargetAssemblyInfo.cs
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.Views.pdb
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.dll
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\ref\BlazorApp.dll
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.pdb
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.genruntimeconfig.cache
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.csproj.CopyComplete
+D:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\Microsoft.AspNetCore.Http.Features.dll
+D:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+D:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\System.IO.Pipelines.dll
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\Pages\Admin.razor.g.cs
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\Pages\Medic.razor.g.cs
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\Pages\User.razor.g.cs
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Pages\Admin.razor.g.cs
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Pages\Medic.razor.g.cs
+D:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Pages\User.razor.g.cs
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.GeneratedMSBuildEditorConfig.editorconfig
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.AssemblyInfoInputs.cache
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.AssemblyInfo.cs
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.csproj.CoreCompileInputs.cache
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.MvcApplicationPartsAssemblyInfo.cache
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.RazorComponent.input.cache
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\App.razor.g.cs
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\Pages\Admin.razor.g.cs
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\Pages\Component.razor.g.cs
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\Pages\Counter.razor.g.cs
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\Pages\CreateAccount.razor.g.cs
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\Pages\FetchData.razor.g.cs
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\Pages\Index.razor.g.cs
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\Pages\Login-Page.razor.g.cs
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\Pages\Medic.razor.g.cs
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\Pages\User.razor.g.cs
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\Shared\SurveyPrompt.razor.g.cs
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\_Imports.razor.g.cs
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\Shared\MainLayout.razor.g.cs
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\Shared\NavMenu.razor.g.cs
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.RazorComponent.output.cache
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.dll
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\ref\BlazorApp.dll
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.pdb
+E:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\appsettings.Development.json
+E:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\appsettings.json
+E:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\BlazorApp.StaticWebAssets.xml
+E:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\BlazorApp.exe
+E:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\BlazorApp.deps.json
+E:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\BlazorApp.runtimeconfig.json
+E:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\BlazorApp.runtimeconfig.dev.json
+E:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\BlazorApp.dll
+E:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\ref\BlazorApp.dll
+E:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\BlazorApp.pdb
+E:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\BlazorApp.Views.dll
+E:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\BlazorApp.Views.pdb
+E:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\EntityFramework.SqlServer.dll
+E:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\EntityFramework.dll
+E:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\Microsoft.AspNetCore.Http.Features.dll
+E:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+E:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\System.CodeDom.dll
+E:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
+E:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\System.Data.SqlClient.dll
+E:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\System.IO.Pipelines.dll
+E:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
+E:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\runtimes\win-arm64\native\sni.dll
+E:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\runtimes\win-x64\native\sni.dll
+E:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\runtimes\win-x86\native\sni.dll
+E:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+E:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+E:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\BlazorApp.dll
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.TagHelpers.input.cache
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.TagHelpers.output.cache
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.RazorCoreGenerate.cache
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\App.razor.g.cs
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Pages\Admin.razor.g.cs
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Pages\Component.razor.g.cs
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Pages\Counter.razor.g.cs
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Pages\CreateAccount.razor.g.cs
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Pages\FetchData.razor.g.cs
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Pages\Index.razor.g.cs
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Pages\Login-Page.razor.g.cs
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Pages\Medic.razor.g.cs
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Pages\User.razor.g.cs
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Shared\SurveyPrompt.razor.g.cs
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\_Imports.razor.g.cs
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Shared\MainLayout.razor.g.cs
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Shared\NavMenu.razor.g.cs
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Pages\Error.cshtml.g.cs
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Pages\_Host.cshtml.g.cs
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.RazorAssemblyInfo.cache
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.RazorAssemblyInfo.cs
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\staticwebassets\BlazorApp.StaticWebAssets.Manifest.cache
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\staticwebassets\BlazorApp.StaticWebAssets.xml
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\scopedcss\bundle\BlazorApp.styles.css
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\scopedcss\projectbundle\BlazorApp.bundle.scp.css
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.RazorTargetAssemblyInfo.cache
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.RazorTargetAssemblyInfo.cs
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.Views.pdb
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.csproj.CopyComplete
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.genruntimeconfig.cache
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\Pages\Appointment.razor.g.cs
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Pages\Appointment.razor.g.cs
+E:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\CalcBinding.dll
+E:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\DynamicExpresso.Core.dll
+E:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\Newtonsoft.Json.dll
+E:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\Smart.Blazor.dll
+E:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\SmartUI.dll

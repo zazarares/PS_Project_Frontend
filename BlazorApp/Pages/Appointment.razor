@@ -1,0 +1,83 @@
+﻿@page "/Appointment/{id}"
+@using Smart.Blazor
+@inject IHttpClientFactory ClientFactory
+@inject NavigationManager NavManager
+@using Utility
+@using Newtonsoft.Json
+@using System.Text.Json
+
+<Calendar @ref="calendar"></Calendar>
+<label>Select Medic:</label>
+<DropDownList DataSource="D" @bind-SelectedValues="StringVal">
+    Select Medic
+
+</DropDownList>
+<DropDownList DataSource="Time" @bind-SelectedIndexes="StringValTime"></DropDownList>
+<DropDownList DataSource="L" @bind-SelectedValues="StringValLOC"></DropDownList>
+<Button OnClick="CreateAppointment_method"></Button>
+<label>@id</label>
+@code {
+    [Parameter]
+    public string id { get; set; }
+    List<string> D = new List<string>();
+    List<string> L = new List<string>();
+    string[] Time = new string[] { "8-10", "10-12", "12-14", "14-16", "16-18", "18-20" };
+    IEnumerable<object> psp;
+    public string[] StringVal = new string[] { "" };
+    public string[] StringValLOC = new string[] { "" };
+    public string[] StringValDate = new string[]{"2022 - 01 - 18"};
+    public int[] StringValTime = new int[6];
+    Calendar calendar;
+    //DropDownList Test=new DropDownList();
+    string DoctorName;
+    List<Doctor> DoctorList;
+    List<Location> LocationList;
+    protected override async Task OnInitializedAsync()
+    {
+
+        var request = new HttpRequestMessage(HttpMethod.Get, "https://localhost:44321/Doctor");
+        var Client = ClientFactory.CreateClient();
+        var response = await Client.SendAsync(request);
+        if (response.IsSuccessStatusCode)
+        {
+            var responseStream = await response.Content.ReadAsStringAsync();
+            DoctorList = JsonConvert.DeserializeObject<List<Doctor>>(responseStream);
+            //DoctorList = DoctorListC.Doc;
+            D = DoctorConvertor.ConvertDoctor(DoctorList);
+            StateHasChanged();
+        }
+        request = new HttpRequestMessage(HttpMethod.Get, "https://localhost:44321/Location");
+        response = await Client.SendAsync(request);
+        if (response.IsSuccessStatusCode)
+        {
+            var responseStream = await response.Content.ReadAsStringAsync();
+            LocationList = JsonConvert.DeserializeObject<List<Location>>(responseStream);
+            //DoctorList = DoctorListC.Doc;
+            L = DoctorConvertor.ConvertLocation(LocationList);
+            StateHasChanged();
+        }
+
+    }
+    async Task CreateAppointment_method()
+    {
+        Doctor Doc = new Doctor();
+        for (int i = 0; i < DoctorList.Count; i++)
+            if (StringVal[0].Equals(DoctorList[i].FirstName + " " + DoctorList[i].LastName))
+                Doc = DoctorList[i];
+        Location Loc = new Location();
+        for (int i = 0; i < LocationList.Count; i++)
+            if (LocationList[i].name.Equals(StringVal[0]))
+                Loc = LocationList[i];
+        List<object> o = calendar.SelectedDates.ToList();
+        Appointment_U APM = new Appointment_U(StringValTime[0],DateTime.Parse(o[0].ToString()));
+        var Client = ClientFactory.CreateClient();
+        var send_appointment = System.Text.Json.JsonSerializer.Serialize(APM);
+        var req = new StringContent(send_appointment, System.Text.Encoding.UTF8, "application/json");
+        var response_donator = await Client.PostAsync("https://localhost:44321/Appointment", req);
+        //NavManager.NavigateTo($"/Users/{id}");
+    }
+    void test_func()
+    {
+
+    }
+}

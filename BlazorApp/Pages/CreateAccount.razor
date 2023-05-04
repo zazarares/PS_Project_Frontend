@@ -1,0 +1,276 @@
+﻿@page "/CreateAccount"
+@inject NavigationManager NavManager
+@using System.Text.Json
+@using System.Text.Json.Serialization
+
+@using BlazorApp.Data
+@inject IHttpClientFactory ClientFactory
+
+<h3>CreateAccount</h3>
+<div class="test-div">
+
+    <fieldset class="Field1">
+        <label class="row" for="FirstName">
+            FirstName:
+            <br>
+            <textarea class="non_resizable_text_area" id="FirstName" cols="50" rows="1" @bind="FirstName" @bind:event="onchange"></textarea>
+        </label>
+        <label class="row" for="LastName">
+            LastName:
+            <br>
+            <textarea class="non_resizable_text_area" id="LastName" cols="50" rows="1" @bind="LastName" @bind:event="onchange"></textarea>
+        </label>
+        <label class="row" for="CNP">
+            CNP:
+            <br>
+            <textarea class="non_resizable_text_area" id="CNP" cols="50" rows="1" @bind="CNP" @bind:event="onchange"></textarea>
+        </label>
+        <label class="row" for="Email">
+            Username:
+            <br>
+            <textarea class="non_resizable_text_area" id="Email" cols="50" rows="1" @bind="Email" @bind:event="onchange"></textarea>
+        </label>
+        <label class="row" for="Password">
+            Password:
+            <br>
+            <textarea class="non_resizable_text_area" id="Password" cols="50" rows="1" @bind="Password" @bind:event="onchange"></textarea>
+        </label>
+
+        <label class="row" for="ConfirmPassword">
+            ConfirmPassword:
+            <br>
+            <textarea class="non_resizable_text_area" id="ConfirmPassword" cols="50" rows="1" @bind="Password" @bind:event="onchange"></textarea>
+        </label>
+        <div class="dropdown">
+            <button class="dropbtn">@BloodType</button>
+            <div class="dropdown-content">
+                <button class="dropdown-button" @onclick="BloodType_A">A</button>
+                <br>
+                <button class="dropdown-button" @onclick="BloodType_B">B</button>
+                <br>
+                <button class="dropdown-button" @onclick="BloodType_AB">AB</button>
+                <br>
+                <button class="dropdown-button" @onclick="BloodType_Z">0</button>
+
+            </div>
+        </div>
+        <br>
+        <button class="non_resizable_button" type="submit" @onclick="@CreateAccount_method">
+            CreateAccount
+        </button>
+    </fieldset>
+
+</div>
+
+
+<style>
+    .test-div {
+        vertical-align: central;
+    }
+
+    .Field1 {
+        display: table;
+        display: inline-block;
+        align-content: center;
+        align-self: center;
+        text-align: center;
+    }
+
+    .row {
+        display: table-row;
+        text-align: center;
+    }
+
+    .non_resizable_text_area {
+        resize: none;
+        display: table-cell;
+        text-align: center;
+    }
+
+    .non_resizable_button {
+        resize: none;
+        margin-top: 4px;
+        display: table-cell;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 15px;
+        align-content: center;
+    }
+
+    body {
+        text-align: center;
+        vertical-align: central;
+        background-image: url(https://img.freepik.com/premium-vector/realistic-abstract-background-red-white-accent-shape_294571-1035.jpg?w=1380);
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-top: 3%;
+    }
+
+    form1 {
+        display: inline-block;
+        align-items: center;
+        align-self: center;
+        text-align: center;
+        align-content: center;
+    }
+
+    label {
+        text-align: center;
+        font-size: 15px;
+        align-content: center;
+    }
+
+    input {
+        text-align: center;
+        align-content: center;
+    }
+
+    .dropbtn {
+        background-color: darkred;
+        color: white;
+        width: 400px;
+        font-size: 16px;
+        border: none;
+    }
+
+    .dropdown {
+        position: relative;
+        width: 400px;
+        display: inline-block;
+    }
+
+    .dropdown-button {
+        width: 400px;
+        background-color: crimson;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        width: 400px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+        .dropdown-content a {
+            color: black;
+            width: 400px;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+            .dropdown-content a:hover {
+                background-color: #ddd;
+                width: 400px;
+            }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+        width: 400px;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: #3e8e41;
+        width: 400px;
+    }
+</style>
+
+@code {
+    public string Password { get; set; }
+    public string Email { get; set; }
+    public string CNP { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    private bool isActive = false;
+    string BloodType = "Select Blood Type";
+    bool A, B, AB, Z;
+    private void Show()
+    {
+        isActive = true;
+    }
+
+    private void Hide()
+    {
+        isActive = false;
+    }
+
+    private async Task LogOutAsync()
+    {
+
+    }
+    protected async Task CreateAccount_method(MouseEventArgs mouseEventArgs)
+    {
+        //var request = new HttpRequestMessage(HttpMethod.Post, "https://localhost:44321/WeatherForecastService");
+        var Client = ClientFactory.CreateClient();
+        User_Working u=new User_Working();
+        u.username = Email;
+        u.password = Password;
+        u.userType = 2;
+        Donator d = new Donator();
+        d.BloodType = SelectBloodType();
+        d.CNP = CNP;
+        d.FirstName = FirstName;
+        d.LastName = LastName;
+        d.Zona = "";//SelectZona();
+        Admin a = new Admin();
+        Doctor doc = new Doctor();
+        var send_doctor=JsonSerializer.Serialize(doc);
+        var send_donator = JsonSerializer.Serialize(d);
+        var to_send = JsonSerializer.Serialize(u);
+        var req = new StringContent(to_send,System.Text.Encoding.UTF8, "application/json");
+        var reqD = new StringContent(send_donator, System.Text.Encoding.UTF8, "application/json");
+        var response_donator = await Client.PostAsync("https://localhost:44321/Donator", reqD);
+        var response = await Client.PostAsync("https://localhost:44321/WeatherForecastService", req);
+        NavManager.NavigateTo("/");
+    }
+    string SelectBloodType()
+    {
+        if (A)
+            return "A";
+        if (B)
+            return "B";
+        if (AB)
+            return "AB";
+        if (Z)
+            return "0";
+        return "";
+    }
+    protected void BloodType_A()
+    {
+        A = true;
+        B = false;
+        AB = false;
+        Z = false;
+        BloodType = "A";
+    }
+    protected void BloodType_B()
+    {
+        A = false;
+        B = true;
+        AB = false;
+        Z = false;
+        BloodType = "B";
+
+    }
+    protected void BloodType_AB()
+    {
+        A = false;
+        B = false;
+        AB = true;
+        Z = false;
+        BloodType = "AB";
+
+    }
+    protected void BloodType_Z()
+    {
+        A = false;
+        B = false;
+        AB = false;
+        Z = true;
+        BloodType = "0";
+
+    }
+}

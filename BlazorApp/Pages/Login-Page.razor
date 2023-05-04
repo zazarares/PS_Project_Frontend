@@ -1,0 +1,153 @@
+﻿@inject NavigationManager NavManager
+@using System.Text.Json
+@using System.Text.Json.Serialization
+@using BlazorApp.Data
+
+@inject IHttpClientFactory ClientFactory
+<h2>Please log in to continue</h2>
+<div class="test-div">
+    <fieldset class="Field1">
+        <label class="row" for="Email">
+            Email:
+            <br>
+            <textarea class="non_resizable_text_area" id="Email" cols="50" rows="1" @bind="Email" @bind:event="onchange"></textarea>
+        </label>
+        <br>
+        <label class="row" for="Password">
+            Password:
+            <br>
+            <textarea class="non_resizable_text_area" id="Password" cols="50" rows="1" @bind="Password" @bind:event="onchange"></textarea>
+        </label>
+
+        <button class="non_resizable_button" type="submit" @onclick="@CheckLogin">
+            Login
+        </button>
+        <br>
+        <button class="non_resizable_button" type="submit" @onclick="@CreateAccountPage">
+            CreateAccount
+        </button>
+    </fieldset>
+
+</div>
+<style>
+    .test-div {
+        vertical-align: central;
+    }
+
+    .Field1 {
+        display: table;
+        display: inline-block;
+        align-content: center;
+        align-self: center;
+        text-align: center;
+    }
+
+    .row {
+        display: table-row;
+        text-align: center;
+    }
+
+    .non_resizable_text_area {
+        resize: none;
+        display: table-cell;
+        text-align: center;
+    }
+
+    .non_resizable_button {
+        resize: none;
+        margin-top: 4px;
+        display: table-cell;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 15px;
+        align-content: center;
+    }
+
+    body {
+        text-align: center;
+        vertical-align: central;
+        background-image: url(https://cdn5.vectorstock.com/i/1000x1000/57/64/blood-donation-background-with-donation-vector-14615764.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-top: 25%;
+    }
+
+    form1 {
+        display: inline-block;
+        align-items: center;
+        align-self: center;
+        text-align: center;
+        align-content: center;
+    }
+
+    label {
+        text-align: center;
+        font-size: 15px;
+        align-content: center;
+    }
+
+    input {
+        text-align: center;
+        align-content: center;
+    }
+</style>
+@code {
+    public string Password { get; set; }
+    public string Email { get; set; }
+
+    [Parameter]
+    public string myvalue { get; set; }
+
+    public async void CheckLogin(MouseEventArgs mouseEventArgs)
+    {
+        DateTime dt = DateTime.Now;
+        for (int i = 0; i < branches.Count; i++)
+            if (Email.Equals(branches.ElementAt(i).username))
+                if (Password.Equals(branches.ElementAt(i).password))
+                    switch (branches.ElementAt(i).userType)
+                    {
+                        case 0:
+                            NavManager.NavigateTo("/Admin");
+                            break;
+                        case 1:
+                            NavManager.NavigateTo("/Medic");
+                            break;
+                        case 2:
+                            i++;
+                            string s = i.ToString();
+                            NavManager.NavigateTo($"/User/{s}");
+                            goto functionend;
+                    }
+                functionend:;
+    }
+
+    protected void CreateAccountPage(MouseEventArgs mouseEventArgs)
+    {
+        NavManager.NavigateTo("/CreateAccount");
+    }
+    protected override void OnParametersSet()
+    {
+        //the param will be set now
+        var test = myvalue;
+
+    }
+    List<User_Working> branches = new List<User_Working>();
+    protected override async Task OnInitializedAsync()
+    {
+        var request = new HttpRequestMessage(HttpMethod.Get, "https://localhost:44321/WeatherForecastService");
+        var Client = ClientFactory.CreateClient();
+        var response = await Client.SendAsync(request);
+        if (response.IsSuccessStatusCode)
+        {
+            using var responseStream = await response.Content.ReadAsStreamAsync();
+            Email = await response.Content.ReadAsStringAsync();
+            branches = await JsonSerializer.DeserializeAsync<List<User_Working>>(responseStream);
+        }
+        else
+        {
+            Email = "fail";
+        }
+    }
+}

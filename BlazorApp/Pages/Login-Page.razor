@@ -142,12 +142,10 @@
         if (response.IsSuccessStatusCode)
         {
             using var responseStream = await response.Content.ReadAsStreamAsync();
-            Email = await response.Content.ReadAsStringAsync();
             branches = await JsonSerializer.DeserializeAsync<List<User_Working>>(responseStream);
         }
         else
         {
-            Email = "fail";
         }
     }
 }

@@ -9,8 +9,8 @@ namespace BlazorApp
     {
         [Key]
         public int id { get; set; }
+
         public Admin() {; }
-        public User_Working U = new User_Working();
 
     }
 }

@@ -1,0 +1,145 @@
+﻿@page "/SendResults/{appid}/{doctorid}"
+@inject IHttpClientFactory ClientFactory
+@using System.Text.Json
+@using System.Text.Json.Serialization
+@using Newtonsoft.Json
+<h3>SendResults</h3>
+<label>SMS</label>
+<Smart.Blazor.RadioButton OnCheckValue="OnCheckValueB1" Value="B1"></Smart.Blazor.RadioButton>
+<br>
+<label>Email</label>
+<Smart.Blazor.RadioButton OnCheckValue="OnCheckValueB2"></Smart.Blazor.RadioButton>
+<br>
+<label>Remarks:</label>
+<textarea @bind="rez"></textarea>
+<br>
+<Smart.Blazor.Button OnClick="sendAppointment">Send Appointment</Smart.Blazor.Button>
+<style>
+
+    body {
+        color: white;
+        text-align: center;
+        vertical-align: central;
+        background-image: url(https://as2.ftcdn.net/v2/jpg/01/34/88/19/1000_F_134881906_gdIsbeci13e4p6XZ3Kn0l0MYmrueJ20q.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+</style>
+
+@code {
+    bool B1;
+    bool B2;
+    string rez;
+    List<Appointment_U> LA;
+    List<Doctor> LD;
+    List<Donator> LDD;
+    List<User_Working> LU;
+    [Parameter]
+    public string appid { get; set; }
+    [Parameter]
+    public string doctorid{ get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        var request = new HttpRequestMessage(HttpMethod.Get, "https://localhost:44321/Appointment");
+        var Client = ClientFactory.CreateClient();
+        var response = await Client.SendAsync(request);
+        if (response.IsSuccessStatusCode)
+        {
+            var responseStream = await response.Content.ReadAsStringAsync();
+            LA = JsonConvert.DeserializeObject<List<Appointment_U>>(responseStream);
+            for (int i = 0; i < LA.Count; i++)
+                if (LA.ElementAt(i).DoctorID != 1)
+                    ;
+            //DoctorList = DoctorListC.Doc;
+            StateHasChanged();
+        }
+        else
+        {
+        }
+        request = new HttpRequestMessage(HttpMethod.Get, "https://localhost:44321/Doctor");
+        response = await Client.SendAsync(request);
+        if (response.IsSuccessStatusCode)
+        {
+            var responseStream = await response.Content.ReadAsStringAsync();
+            LD = JsonConvert.DeserializeObject<List<Doctor>>(responseStream);
+            StateHasChanged();
+        }
+        else
+        {
+        }
+        request = new HttpRequestMessage(HttpMethod.Get, "https://localhost:44321/Donator");
+        response = await Client.SendAsync(request);
+        if (response.IsSuccessStatusCode)
+        {
+            var responseStream = await response.Content.ReadAsStringAsync();
+            LDD = JsonConvert.DeserializeObject<List<Donator>>(responseStream);
+            StateHasChanged();
+        }
+        else
+        {
+        }
+        request = new HttpRequestMessage(HttpMethod.Get, "https://localhost:44321/WeatherForecastService");
+        response = await Client.SendAsync(request);
+        if (response.IsSuccessStatusCode)
+        {
+            var responseStream = await response.Content.ReadAsStringAsync();
+            LU = JsonConvert.DeserializeObject<List<User_Working>>(responseStream);
+            StateHasChanged();
+        }
+        else
+        {
+        }
+    }
+
+    public void OnCheckValueB1()
+    {
+        B1=true;
+        B2=false;
+    }
+    public void OnCheckValueB2()
+    {
+        B1 = false;
+        B2 = true;
+    }
+    public async Task sendAppointment()
+    {
+        Doctor D=new Doctor();
+        for(int i=0;i<LD.Count;i++)
+            if(LD.ElementAt(i).id==Int32.Parse(doctorid))
+                D = LD.ElementAt(i);
+        Appointment_U A=new Appointment_U();
+        for (int i = 0; i < LD.Count; i++)
+            if (LA.ElementAt(i).id == Int32.Parse(appid))
+                A = LA.ElementAt(i);
+        if (B1)
+        {
+
+            var Client = ClientFactory.CreateClient();
+            SMS S=new SMS();
+            S.Content = rez;
+            S.To = LDD.ElementAt(A.DonatorID).telefon;
+            var toSend = System.Text.Json.JsonSerializer.Serialize(S);
+
+            var req = new StringContent(toSend, System.Text.Encoding.UTF8, "application/json");
+            var response_donator = await Client.PostAsync("https://localhost:44321/SMS",req );
+
+        }
+        if (B2)
+        {
+            var Client = ClientFactory.CreateClient();
+            Email E = new Email();
+            E.Content = rez;
+            E.To = LU.ElementAt(A.DonatorID).username;
+            E.PatientName = LDD.ElementAt(A.DonatorID).FirstName + " " + LDD.ElementAt(A.DonatorID).LastName;
+            E.From = LD.ElementAt(A.DoctorID).FirstName + " " + LD.ElementAt(A.DoctorID).FirstName;
+            E.subject = "Results";
+            var toSend = System.Text.Json.JsonSerializer.Serialize(E);
+
+            var req = new StringContent(toSend, System.Text.Encoding.UTF8, "application/json");
+            var response_donator = await Client.PostAsync("https://localhost:44321/Email", req);
+        }
+
+    }
+}
+

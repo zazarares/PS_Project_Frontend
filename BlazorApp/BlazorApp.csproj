@@ -8,6 +8,7 @@
     <PackageReference Include="EntityFramework" Version="6.4.4" />
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
+    <PackageReference Include="sendgrid" Version="9.28.1" />
     <PackageReference Include="Smart.Blazor" Version="15.1.1" />
     <PackageReference Include="SmartUI" Version="1.0.1.5" />
   </ItemGroup>

@@ -250,3 +250,8 @@ E:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\DynamicExpresso.Core.dll
 E:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\Newtonsoft.Json.dll
 E:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\Smart.Blazor.dll
 E:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\SmartUI.dll
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\BlazorApp.csproj.AssemblyReference.cache
+E:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\SendGrid.dll
+E:\source\repos\BlazorApp\BlazorApp\bin\Debug\net5.0\StarkbankEcdsa.dll
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\RazorDeclaration\Pages\SendResults.razor.g.cs
+E:\source\repos\BlazorApp\BlazorApp\obj\Debug\net5.0\Razor\Pages\SendResults.razor.g.cs

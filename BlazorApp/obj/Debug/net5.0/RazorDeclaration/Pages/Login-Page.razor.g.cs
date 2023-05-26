@@ -125,21 +125,26 @@ using BlazorApp.Data;
         for (int i = 0; i < branches.Count; i++)
             if (Email.Equals(branches.ElementAt(i).username))
                 if (Password.Equals(branches.ElementAt(i).password))
+                {
+                    i++;
+                    string s = i.ToString();
+                    i--;
                     switch (branches.ElementAt(i).userType)
                     {
+
                         case 0:
                             NavManager.NavigateTo("/Admin");
                             break;
                         case 1:
-                            NavManager.NavigateTo("/Medic");
+                            NavManager.NavigateTo($"/Medic/{s}");
                             break;
                         case 2:
-                            i++;
-                            string s = i.ToString();
+
                             NavManager.NavigateTo($"/User/{s}");
                             goto functionend;
                     }
-                functionend:;
+                }
+            functionend:;
     }
 
     protected void CreateAccountPage(MouseEventArgs mouseEventArgs)
@@ -161,12 +166,10 @@ using BlazorApp.Data;
         if (response.IsSuccessStatusCode)
         {
             using var responseStream = await response.Content.ReadAsStreamAsync();
-            Email = await response.Content.ReadAsStringAsync();
             branches = await JsonSerializer.DeserializeAsync<List<User_Working>>(responseStream);
         }
         else
         {
-            Email = "fail";
         }
     }
 

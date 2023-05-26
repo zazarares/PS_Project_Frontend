@@ -12,20 +12,19 @@ namespace BlazorApp
         public int id { get; set; }
         public int timeslot { get; set; }
         public DateTime Date { get; set; }
-
+        public int DoctorID { get; set; }
+        public int DonatorID { get; set; }
         public Appointment_U()
         {
-            //gid++;
+            // gid++;
             //id = gid;
             timeslot = 0;
-
         }
-        public Appointment_U(int timeslot,DateTime Date)
+        public Appointment_U(int timeslot, DateTime Date)
         {
-            //gid++;
-            //id = gid;
+            //   gid++;
+            // id = gid;
             this.timeslot = timeslot;
-
             this.Date = Date;
         }
     }

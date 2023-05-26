@@ -97,6 +97,13 @@ using System.Text.Json.Serialization;
 #line hidden
 #nullable disable
 #nullable restore
+#line 5 "E:\source\repos\BlazorApp\BlazorApp\Pages\CreateAccount.razor"
+using Newtonsoft.Json;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 6 "E:\source\repos\BlazorApp\BlazorApp\Pages\CreateAccount.razor"
 using BlazorApp.Data;
 
@@ -122,6 +129,24 @@ using BlazorApp.Data;
     private bool isActive = false;
     string BloodType = "Select Blood Type";
     bool A, B, AB, Z;
+    List<User_Working> LU;
+    protected override async Task OnInitializedAsync()
+    {
+        var request = new HttpRequestMessage(HttpMethod.Get, "https://localhost:44321/WeatherForecastService");
+        var Client = ClientFactory.CreateClient();
+        var response = await Client.SendAsync(request);
+        if (response.IsSuccessStatusCode)
+        {
+            var responseStream = await response.Content.ReadAsStringAsync();
+            LU = JsonConvert.DeserializeObject<List<User_Working>>(responseStream);
+            //DoctorList = DoctorListC.Doc;
+            StateHasChanged();
+        }
+
+    }
+
+
+
     private void Show()
     {
         isActive = true;
@@ -145,20 +170,23 @@ using BlazorApp.Data;
         u.password = Password;
         u.userType = 2;
         Donator d = new Donator();
+        d.id = LU.Count+1;
         d.BloodType = SelectBloodType();
         d.CNP = CNP;
         d.FirstName = FirstName;
         d.LastName = LastName;
+        d.telefon = "+40784552626";
         d.Zona = "";//SelectZona();
         Admin a = new Admin();
         Doctor doc = new Doctor();
-        var send_doctor=JsonSerializer.Serialize(doc);
-        var send_donator = JsonSerializer.Serialize(d);
-        var to_send = JsonSerializer.Serialize(u);
+        var send_doctor=System.Text.Json.JsonSerializer.Serialize(doc);
+        var send_donator = System.Text.Json.JsonSerializer.Serialize(d);
+        var to_send = System.Text.Json.JsonSerializer.Serialize(u);
         var req = new StringContent(to_send,System.Text.Encoding.UTF8, "application/json");
         var reqD = new StringContent(send_donator, System.Text.Encoding.UTF8, "application/json");
-        var response_donator = await Client.PostAsync("https://localhost:44321/Donator", reqD);
         var response = await Client.PostAsync("https://localhost:44321/WeatherForecastService", req);
+        var response_donator = await Client.PostAsync("https://localhost:44321/Donator", reqD);
+
         NavManager.NavigateTo("/");
     }
     string SelectBloodType()

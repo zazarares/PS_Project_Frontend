@@ -14,6 +14,8 @@ namespace BlazorApp
         public string LastName { get; set; }
         public string BloodType { get; set; }
         public string Zona { get; set; }
+        public string telefon { get; set; }
+        public User_Working U { get; set; }
         public Donator()
         {
 
@@ -27,6 +29,6 @@ namespace BlazorApp
             this.LastName = LastName;
             this.Zona = Zona;
         }
-        public User_Working U=new User_Working();
+        
     }
 }

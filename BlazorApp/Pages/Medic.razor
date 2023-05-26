@@ -1,6 +1,97 @@
-﻿@page "/medic"
+﻿@page "/medic/{id}"
+@inject IHttpClientFactory ClientFactory
+@inject NavigationManager NavManager
+@using SendGrid;
+@using SendGrid.Helpers.Mail;
+@using System;
+@using System.Threading.Tasks;
+@using Newtonsoft.Json;
+
 <h3>Medic</h3>
-
+<p>Appointment number:</p>
+<textarea class="non_resizable_text_area" @bind="Appointment_to_notify"></textarea>
+<button @onclick="sendEmail">Trimite mail!</button>
+<Smart.Blazor.Table DataSource="@LA" Columns="@columns">
+</Smart.Blazor.Table>
+<style>
+    .non_resizable_text_area {
+        resize: none;
+        display: table-cell;
+        text-align: center;
+        max-height 5px;
+    }
+</style>
 @code {
+    
+    List<Appointment_U> LA = new List<Appointment_U>();
+    [Parameter]
+    public string id { get; set; }
+    string Appointment_to_notify;
+    Smart.Blazor.TableColumn[] columns = new Smart.Blazor.TableColumn[] {
+        new Smart.Blazor.TableColumn()
+        {
+            Label = "id",
+            DataField = "id",
+        },
+        new Smart.Blazor.TableColumn()
+        {
+            Label = "Date",
+            DataField = "Date"
+        },
+        new Smart.Blazor.TableColumn()
+        {
+            Label = "timeslot",
+            DataField = "timeslot"
+        },
+        new Smart.Blazor.TableColumn()
+        {
+            Label = "DoctorID",
+            DataField = "DoctorID"
+        },
+        new Smart.Blazor.TableColumn()
+        {
+            Label = "DonatorID",
+            DataField = "DonatorID"
+        }
 
+
+    };
+
+    List<string> S = new List<string>();
+    List<Doctor> DL = new List<Doctor>();
+    protected override async Task OnInitializedAsync()
+    {
+        var request = new HttpRequestMessage(HttpMethod.Get, "https://localhost:44321/Appointment");
+        var Client = ClientFactory.CreateClient();
+        var response = await Client.SendAsync(request);
+        if (response.IsSuccessStatusCode)
+        {
+            var responseStream = await response.Content.ReadAsStringAsync();
+            LA = JsonConvert.DeserializeObject<List<Appointment_U>>(responseStream);
+            for (int i = 0; i < LA.Count; i++)
+                if (LA.ElementAt(i).DoctorID != 1)
+                    ;
+            //DoctorList = DoctorListC.Doc;
+            StateHasChanged();
+        }
+        else
+        {
+        }
+        request = new HttpRequestMessage(HttpMethod.Get, "https://localhost:44321/Doctor");
+        response = await Client.SendAsync(request);
+        if (response.IsSuccessStatusCode)
+        {
+            var responseStream = await response.Content.ReadAsStringAsync();
+            DL = JsonConvert.DeserializeObject<List<Doctor>>(responseStream);
+            StateHasChanged();
+        }
+        else
+        {
+        }
+    }
+    public async Task sendEmail()
+    {
+
+        NavManager.NavigateTo($"SendResults/{id}/{Appointment_to_notify}");
+    }
 }

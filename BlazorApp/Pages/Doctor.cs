@@ -17,6 +17,7 @@ namespace BlazorApp
         public string FirstName { get; set; }
         [JsonProperty("lastname")]
         public string LastName { get; set; }
+        public User_Working U { get; set; }
         public Doctor()
         {
             

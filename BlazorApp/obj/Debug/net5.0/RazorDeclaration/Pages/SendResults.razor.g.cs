@@ -7,8 +7,10 @@
 namespace BlazorApp.Pages
 {
     #line hidden
+    using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
 #line 1 "E:\source\repos\BlazorApp\BlazorApp\_Imports.razor"
@@ -81,42 +83,28 @@ using BlazorApp.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "E:\source\repos\BlazorApp\BlazorApp\Pages\Medic.razor"
-using SendGrid;
+#line 3 "E:\source\repos\BlazorApp\BlazorApp\Pages\SendResults.razor"
+using System.Text.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "E:\source\repos\BlazorApp\BlazorApp\Pages\Medic.razor"
-using SendGrid.Helpers.Mail;
+#line 4 "E:\source\repos\BlazorApp\BlazorApp\Pages\SendResults.razor"
+using System.Text.Json.Serialization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "E:\source\repos\BlazorApp\BlazorApp\Pages\Medic.razor"
-using System;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 7 "E:\source\repos\BlazorApp\BlazorApp\Pages\Medic.razor"
-using System.Threading.Tasks;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 8 "E:\source\repos\BlazorApp\BlazorApp\Pages\Medic.razor"
+#line 5 "E:\source\repos\BlazorApp\BlazorApp\Pages\SendResults.razor"
 using Newtonsoft.Json;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/medic/{id}")]
-    public partial class Medic : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/SendResults/{appid}/{doctorid}")]
+    public partial class SendResults : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -124,45 +112,19 @@ using Newtonsoft.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 24 "E:\source\repos\BlazorApp\BlazorApp\Pages\Medic.razor"
+#line 30 "E:\source\repos\BlazorApp\BlazorApp\Pages\SendResults.razor"
        
-    
-    List<Appointment_U> LA = new List<Appointment_U>();
+    bool B1;
+    bool B2;
+    string rez;
+    List<Appointment_U> LA;
+    List<Doctor> LD;
+    List<Donator> LDD;
+    List<User_Working> LU;
     [Parameter]
-    public string id { get; set; }
-    string Appointment_to_notify;
-    Smart.Blazor.TableColumn[] columns = new Smart.Blazor.TableColumn[] {
-        new Smart.Blazor.TableColumn()
-        {
-            Label = "id",
-            DataField = "id",
-        },
-        new Smart.Blazor.TableColumn()
-        {
-            Label = "Date",
-            DataField = "Date"
-        },
-        new Smart.Blazor.TableColumn()
-        {
-            Label = "timeslot",
-            DataField = "timeslot"
-        },
-        new Smart.Blazor.TableColumn()
-        {
-            Label = "DoctorID",
-            DataField = "DoctorID"
-        },
-        new Smart.Blazor.TableColumn()
-        {
-            Label = "DonatorID",
-            DataField = "DonatorID"
-        }
-
-
-    };
-
-    List<string> S = new List<string>();
-    List<Doctor> DL = new List<Doctor>();
+    public string appid { get; set; }
+    [Parameter]
+    public string doctorid{ get; set; }
     protected override async Task OnInitializedAsync()
     {
         var request = new HttpRequestMessage(HttpMethod.Get, "https://localhost:44321/Appointment");
@@ -186,23 +148,89 @@ using Newtonsoft.Json;
         if (response.IsSuccessStatusCode)
         {
             var responseStream = await response.Content.ReadAsStringAsync();
-            DL = JsonConvert.DeserializeObject<List<Doctor>>(responseStream);
+            LD = JsonConvert.DeserializeObject<List<Doctor>>(responseStream);
+            StateHasChanged();
+        }
+        else
+        {
+        }
+        request = new HttpRequestMessage(HttpMethod.Get, "https://localhost:44321/Donator");
+        response = await Client.SendAsync(request);
+        if (response.IsSuccessStatusCode)
+        {
+            var responseStream = await response.Content.ReadAsStringAsync();
+            LDD = JsonConvert.DeserializeObject<List<Donator>>(responseStream);
+            StateHasChanged();
+        }
+        else
+        {
+        }
+        request = new HttpRequestMessage(HttpMethod.Get, "https://localhost:44321/WeatherForecastService");
+        response = await Client.SendAsync(request);
+        if (response.IsSuccessStatusCode)
+        {
+            var responseStream = await response.Content.ReadAsStringAsync();
+            LU = JsonConvert.DeserializeObject<List<User_Working>>(responseStream);
             StateHasChanged();
         }
         else
         {
         }
     }
-    public async Task sendEmail()
-    {
 
-        NavManager.NavigateTo($"SendResults/{id}/{Appointment_to_notify}");
+    public void OnCheckValueB1()
+    {
+        B1=true;
+        B2=false;
+    }
+    public void OnCheckValueB2()
+    {
+        B1 = false;
+        B2 = true;
+    }
+    public async Task sendAppointment()
+    {
+        Doctor D=new Doctor();
+        for(int i=0;i<LD.Count;i++)
+            if(LD.ElementAt(i).id==Int32.Parse(doctorid))
+                D = LD.ElementAt(i);
+        Appointment_U A=new Appointment_U();
+        for (int i = 0; i < LD.Count; i++)
+            if (LA.ElementAt(i).id == Int32.Parse(appid))
+                A = LA.ElementAt(i);
+        if (B1)
+        {
+
+            var Client = ClientFactory.CreateClient();
+            SMS S=new SMS();
+            S.Content = rez;
+            S.To = LDD.ElementAt(A.DonatorID).telefon;
+            var toSend = System.Text.Json.JsonSerializer.Serialize(S);
+
+            var req = new StringContent(toSend, System.Text.Encoding.UTF8, "application/json");
+            var response_donator = await Client.PostAsync("https://localhost:44321/SMS",req );
+
+        }
+        if (B2)
+        {
+            var Client = ClientFactory.CreateClient();
+            Email E = new Email();
+            E.Content = rez;
+            E.To = LU.ElementAt(A.DonatorID).username;
+            E.PatientName = LDD.ElementAt(A.DonatorID).FirstName + " " + LDD.ElementAt(A.DonatorID).LastName;
+            E.From = LD.ElementAt(A.DoctorID).FirstName + " " + LD.ElementAt(A.DoctorID).FirstName;
+            E.subject = "Results";
+            var toSend = System.Text.Json.JsonSerializer.Serialize(E);
+
+            var req = new StringContent(toSend, System.Text.Encoding.UTF8, "application/json");
+            var response_donator = await Client.PostAsync("https://localhost:44321/Email", req);
+        }
+
     }
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IHttpClientFactory ClientFactory { get; set; }
     }
 }

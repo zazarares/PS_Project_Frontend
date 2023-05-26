@@ -14,6 +14,9 @@ namespace BlazorApp
         public string username { get; set; }
         public string password { get; set; }
         public int userType { get; set; }
+        public Donator D{get;set;}
+        public Doctor DD { get; set; }
+        public Admin A { get; set; }
         public User_Working(string username, string password, int type)
         {
             id = gid;

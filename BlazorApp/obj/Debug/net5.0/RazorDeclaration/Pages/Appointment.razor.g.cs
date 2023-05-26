@@ -121,21 +121,35 @@ using System.Text.Json;
 #nullable restore
 #line 19 "E:\source\repos\BlazorApp\BlazorApp\Pages\Appointment.razor"
        
-    [Parameter]
-    public string id { get; set; }
-    List<string> D = new List<string>();
-    List<string> L = new List<string>();
-    string[] Time = new string[] { "8-10", "10-12", "12-14", "14-16", "16-18", "18-20" };
-    IEnumerable<object> psp;
+        List<Appointment_U> LA;
+        string rz = "";
+        [Parameter]
+        public string id { get; set; }
+        
+        public static List<DateTime> GetDates(int year, int month)
+        {
+            return Enumerable.Range(1, DateTime.DaysInMonth(year, month))  // Days: 1, 2 ... 31 etc.
+                             .Select(day => new DateTime(year, month, day)) // Map each day to a date
+                             .ToList(); // Load dates into a list
+        }
+
+
+        List<string> D = new List<string>();
+        List<string> L = new List<string>();
+        string[] Time = new string[] { "8-10", "10-12", "12-14", "14-16", "16-18", "18-20" };
+        IEnumerable<object> psp;
     public string[] StringVal = new string[] { "" };
     public string[] StringValLOC = new string[] { "" };
     public string[] StringValDate = new string[]{"2022 - 01 - 18"};
     public int[] StringValTime = new int[6];
     Calendar calendar;
+    List<Pair<DateTime, List<int>>> Restr=new List< Pair < DateTime, List<int>>>();
     //DropDownList Test=new DropDownList();
     string DoctorName;
     List<Doctor> DoctorList;
     List<Location> LocationList;
+    List<Donator> LDD;
+    List<User_Working> LU;
     protected override async Task OnInitializedAsync()
     {
 
@@ -160,6 +174,83 @@ using System.Text.Json;
             L = DoctorConvertor.ConvertLocation(LocationList);
             StateHasChanged();
         }
+        request = new HttpRequestMessage(HttpMethod.Get, "https://localhost:44321/Donator");
+        response = await Client.SendAsync(request);
+        if (response.IsSuccessStatusCode)
+        {
+            var responseStream = await response.Content.ReadAsStringAsync();
+            LDD = JsonConvert.DeserializeObject<List<Donator>>(responseStream);
+            //DoctorList = DoctorListC.Doc;
+            StateHasChanged();
+        }
+        request = new HttpRequestMessage(HttpMethod.Get, "https://localhost:44321/Donator");
+        response = await Client.SendAsync(request);
+        if (response.IsSuccessStatusCode)
+        {
+            var responseStream = await response.Content.ReadAsStringAsync();
+            LDD = JsonConvert.DeserializeObject<List<Donator>>(responseStream);
+            //DoctorList = DoctorListC.Doc;
+            StateHasChanged();
+        }
+        request = new HttpRequestMessage(HttpMethod.Get, "https://localhost:44321/WeatherForecastService");
+        response = await Client.SendAsync(request);
+        if (response.IsSuccessStatusCode)
+        {
+            var responseStream = await response.Content.ReadAsStringAsync();
+            LU = JsonConvert.DeserializeObject<List<User_Working>>(responseStream);
+            StateHasChanged();
+        }
+        request = new HttpRequestMessage(HttpMethod.Get, "https://localhost:44321/Appointment");
+        response = await Client.SendAsync(request);
+        if (response.IsSuccessStatusCode)
+        {
+            var responseStream = await response.Content.ReadAsStringAsync();
+            LA = JsonConvert.DeserializeObject<List<Appointment_U>>(responseStream);
+            StateHasChanged();
+        }
+        List<int> p = new List<int>();
+        Pair<DateTime, List<int>> T = new Pair<DateTime, List<int>>(DateTime.Today, p);
+        bool ok = false;
+        for (int i = 0; i < LA.Count; i++)
+        {
+            T = new Pair<DateTime, List<int>>(DateTime.Today, p);
+            DateTime D = LA.ElementAt(i).Date;
+            D.AddHours(LA.ElementAt(i).timeslot * 2);
+            for (int j = 0; j < Restr.Count; j++)
+                if (Restr.ElementAt(j).First == D)
+                {
+                    ok = true;
+                    Restr.ElementAt(j).Second.Add(LA.ElementAt(i).timeslot * 2);
+                }
+
+            T.Second.Add(LA.ElementAt(i).timeslot);
+            T.First = D;
+            if (!ok)
+                Restr.Add(T);
+            ok = false;
+        }
+        List<DateTime> DInM = GetDates(DateTime.Today.Year, DateTime.Today.Month);
+        List<DateTime> Available = new List<DateTime>();
+
+        for (int i=0;i<DInM.Count;i++)
+        {
+            bool ok1 = true;
+            for (int j = 0; j < Restr.Count; j++)
+                if (Restr.ElementAt(j).First.Equals(DInM.ElementAt(i)) || ((DInM.ElementAt(i).Day-DateTime.Today.Day)<0))
+                    ok1 = false;
+            if (ok1)
+                Available.Add(DInM.ElementAt(i));
+        }
+        for (int i = 0; i < Available.Count; i++)
+        {
+            rz += Available.ElementAt(i).ToString()+" ";
+
+            rz += "\n";
+
+        }
+
+        StateHasChanged();
+
 
     }
     async Task CreateAppointment_method()
@@ -173,12 +264,28 @@ using System.Text.Json;
             if (LocationList[i].name.Equals(StringVal[0]))
                 Loc = LocationList[i];
         List<object> o = calendar.SelectedDates.ToList();
-        Appointment_U APM = new Appointment_U(StringValTime[0],DateTime.Parse(o[0].ToString()));
+        List<Appointment_U> LA = new List<Appointment_U>();
+        var request = new HttpRequestMessage(HttpMethod.Get, "https://localhost:44321/Appointment");
         var Client = ClientFactory.CreateClient();
+        var response = await Client.SendAsync(request);
+        if (response.IsSuccessStatusCode)
+        {
+            var responseStream = await response.Content.ReadAsStringAsync();
+            LA = JsonConvert.DeserializeObject<List<Appointment_U>>(responseStream);
+            //DoctorList = DoctorListC.Doc;
+            StateHasChanged();
+        }
+        for (int i = 0; i < LA.Count; i++)
+            if (LA.ElementAt(i).Date.ToString().Equals(o.ElementAt(0).ToString()))
+                goto endfunc;
+        Appointment_U APM = new Appointment_U(StringValTime[0],DateTime.Parse(o[0].ToString()));
+        APM.DoctorID = Doc.id;
+        APM.DonatorID = Int32.Parse(id);
         var send_appointment = System.Text.Json.JsonSerializer.Serialize(APM);
         var req = new StringContent(send_appointment, System.Text.Encoding.UTF8, "application/json");
         var response_donator = await Client.PostAsync("https://localhost:44321/Appointment", req);
-        //NavManager.NavigateTo($"/Users/{id}");
+    //NavManager.NavigateTo($"/Users/{id}");
+    endfunc:;
     }
     void test_func()
     {
